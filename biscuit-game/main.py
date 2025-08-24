@@ -7,13 +7,14 @@ def main():
 	clock = pygame.Clock()
 	# Delta time in seconds.
 	dt = 0
+	is_running = True
 
 	# Game loop
-	while True:
+	while is_running:
 		# Handle events.
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
-				return
+				is_running = False
 
 		# Update.
 		pass
@@ -25,6 +26,8 @@ def main():
 
 		# Handle game time.
 		dt = clock.tick(60) / 1000
+
+pygame.quit()
 
 
 if __name__ == "__main__":
